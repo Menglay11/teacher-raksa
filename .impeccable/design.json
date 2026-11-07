@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-05T00:00:00Z",
+  "title": "Design System: Raksa's Day Birthday Invitation",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Invitation Paper", "canonical": "#fff9f1", "tonalRamp": ["oklch(15% 0.015 65)", "oklch(25% 0.015 65)", "oklch(35% 0.015 65)", "oklch(45% 0.015 65)", "oklch(58% 0.015 65)", "oklch(70% 0.015 65)", "oklch(83% 0.015 65)", "oklch(95% 0.015 65)"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#392d39", "tonalRamp": ["oklch(15% 0.02 320)", "oklch(25% 0.02 320)", "oklch(35% 0.02 320)", "oklch(45% 0.02 320)", "oklch(58% 0.02 320)", "oklch(70% 0.02 320)", "oklch(83% 0.02 320)", "oklch(95% 0.02 320)"] },
+      "plum": { "role": "primary", "displayName": "Birthday Plum", "canonical": "#5a3855", "tonalRamp": ["oklch(15% 0.055 325)", "oklch(25% 0.055 325)", "oklch(35% 0.055 325)", "oklch(45% 0.055 325)", "oklch(58% 0.055 325)", "oklch(70% 0.055 325)", "oklch(83% 0.055 325)", "oklch(95% 0.055 325)"] },
+      "plum-hover": { "role": "primary", "displayName": "Deep Plum", "canonical": "#472843", "tonalRamp": ["oklch(15% 0.055 325)", "oklch(25% 0.055 325)", "oklch(35% 0.055 325)", "oklch(45% 0.055 325)", "oklch(58% 0.055 325)", "oklch(70% 0.055 325)", "oklch(83% 0.055 325)", "oklch(95% 0.055 325)"] },
+      "rose": { "role": "secondary", "displayName": "Keepsake Rose", "canonical": "#c87591", "tonalRamp": ["oklch(15% 0.07 5)", "oklch(25% 0.07 5)", "oklch(35% 0.07 5)", "oklch(45% 0.07 5)", "oklch(58% 0.07 5)", "oklch(70% 0.07 5)", "oklch(83% 0.07 5)", "oklch(95% 0.07 5)"] },
+      "rose-deep": { "role": "secondary", "displayName": "Muted Rose", "canonical": "#8e526b", "tonalRamp": ["oklch(15% 0.06 5)", "oklch(25% 0.06 5)", "oklch(35% 0.06 5)", "oklch(45% 0.06 5)", "oklch(58% 0.06 5)", "oklch(70% 0.06 5)", "oklch(83% 0.06 5)", "oklch(95% 0.06 5)"] },
+      "rose-pale": { "role": "secondary", "displayName": "Blush Paper", "canonical": "#f5e4e8", "tonalRamp": ["oklch(15% 0.025 5)", "oklch(25% 0.025 5)", "oklch(35% 0.025 5)", "oklch(45% 0.025 5)", "oklch(58% 0.025 5)", "oklch(70% 0.025 5)", "oklch(83% 0.025 5)", "oklch(95% 0.025 5)"] },
+      "gold": { "role": "tertiary", "displayName": "Party Gold", "canonical": "#a9682a", "tonalRamp": ["oklch(15% 0.09 60)", "oklch(25% 0.09 60)", "oklch(35% 0.09 60)", "oklch(45% 0.09 60)", "oklch(58% 0.09 60)", "oklch(70% 0.09 60)", "oklch(83% 0.09 60)", "oklch(95% 0.09 60)"] },
+      "sage": { "role": "tertiary", "displayName": "Garden Sage", "canonical": "#657b63", "tonalRamp": ["oklch(15% 0.035 140)", "oklch(25% 0.035 140)", "oklch(35% 0.035 140)", "oklch(45% 0.035 140)", "oklch(58% 0.035 140)", "oklch(70% 0.035 140)", "oklch(83% 0.035 140)", "oklch(95% 0.035 140)"] },
+      "line": { "role": "neutral", "displayName": "Paper Line", "canonical": "#e8d9cc", "tonalRamp": ["oklch(15% 0.015 65)", "oklch(25% 0.015 65)", "oklch(35% 0.015 65)", "oklch(45% 0.015 65)", "oklch(58% 0.015 65)", "oklch(70% 0.015 65)", "oklch(83% 0.015 65)", "oklch(95% 0.015 65)"] },
+      "muted": { "role": "neutral", "displayName": "Soft Ink", "canonical": "#766977", "tonalRamp": ["oklch(15% 0.015 320)", "oklch(25% 0.015 320)", "oklch(35% 0.015 320)", "oklch(45% 0.015 320)", "oklch(58% 0.015 320)", "oklch(70% 0.015 320)", "oklch(83% 0.015 320)", "oklch(95% 0.015 320)"] },
+      "paper-white": { "role": "neutral", "displayName": "Paper White", "canonical": "#fffdf8", "tonalRamp": ["oklch(15% 0.01 85)", "oklch(25% 0.01 85)", "oklch(35% 0.01 85)", "oklch(45% 0.01 85)", "oklch(58% 0.01 85)", "oklch(70% 0.01 85)", "oklch(83% 0.01 85)", "oklch(95% 0.01 85)"] },
+      "section-wash": { "role": "neutral", "displayName": "Section Wash", "canonical": "#f4e9dc", "tonalRamp": ["oklch(15% 0.02 70)", "oklch(25% 0.02 70)", "oklch(35% 0.02 70)", "oklch(45% 0.02 70)", "oklch(58% 0.02 70)", "oklch(70% 0.02 70)", "oklch(83% 0.02 70)", "oklch(95% 0.02 70)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Invitation Display", "purpose": "Hero greeting and expressive event headings." },
+      "headline": { "displayName": "Section Headline", "purpose": "Section and memory headings." },
+      "body": { "displayName": "Reading and Interface", "purpose": "Paragraphs, navigation, controls, and admin content." },
+      "label": { "displayName": "Compact Label", "purpose": "Event facts and admin overlines." }
+    },
+    "shadows": [
+      { "name": "portrait-mat", "value": "0 16px 34px rgba(75, 49, 63, .14)", "purpose": "Gives the hero celebration photo a gently lifted paper-frame edge." },
+      { "name": "gallery-mat", "value": "0 9px 18px rgba(75, 49, 63, .10)", "purpose": "Separates memory photos from the tinted gallery surface." }
+    ],
+    "motion": [
+      { "name": "control-hover", "value": "background .18s ease, transform .18s ease", "purpose": "A short color and lift response for enabled buttons." },
+      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "Reduces transitions and disables smooth scrolling when requested." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "900px" },
+      { "name": "mobile", "value": "640px" },
+      { "name": "wide", "value": "1500px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary RSVP Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The filled plum action for starting or submitting an RSVP.",
+      "html": "<button class=\"ds-button-primary\">Count me in <span aria-hidden=\"true\">↗</span></button>",
+      "css": ".ds-button-primary { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 22px; border: 0; border-radius: 4px; padding: 0 22px; background: #5a3855; color: #fff; font: 600 13px 'DM Sans', Arial, sans-serif; cursor: pointer; transition: background .18s ease, transform .18s ease; } .ds-button-primary span { color: #f3cc9d; font-size: 17px; } .ds-button-primary:hover { background: #472843; transform: translateY(-2px); } .ds-button-primary:focus-visible { outline: 3px solid #a96782; outline-offset: 3px; } .ds-button-primary:active { transform: translateY(0); }"
+    },
+    {
+      "name": "Outlined RSVP Navigation Link",
+      "kind": "nav",
+      "refersTo": "button-outline",
+      "description": "A compact outlined invitation action in the desktop header.",
+      "html": "<a class=\"ds-nav-cta\" href=\"#rsvp\">Save your seat <span aria-hidden=\"true\">↗</span></a>",
+      "css": ".ds-nav-cta { display: inline-flex; align-items: center; border: 1px solid #c69eaf; border-radius: 4px; padding: 12px 17px; color: #5a3855; background: transparent; text-decoration: none; font: 700 13px 'DM Sans', Arial, sans-serif; } .ds-nav-cta span { margin-left: 8px; color: #c87591; } .ds-nav-cta:hover { color: #8e526b; } .ds-nav-cta:focus-visible { outline: 3px solid #a96782; outline-offset: 3px; }"
+    },
+    {
+      "name": "RSVP Text Field",
+      "kind": "input",
+      "refersTo": "",
+      "description": "A labeled, warm-white field for guest RSVP details.",
+      "html": "<label class=\"ds-field-label\">Your name<input class=\"ds-field\" placeholder=\"The name your friends call you\" /></label>",
+      "css": ".ds-field-label { display: flex; flex-direction: column; gap: 8px; color: #5a3855; font: 600 12px 'DM Sans', Arial, sans-serif; } .ds-field { width: 100%; min-height: 46px; border: 1px solid #ded0c7; border-radius: 3px; padding: 12px 13px; background: #fffdf9; color: #392d39; font: 400 13px 'DM Sans', Arial, sans-serif; } .ds-field:focus-visible { outline: 3px solid #a96782; outline-offset: 3px; } .ds-field::placeholder { color: #827785; opacity: 1; }"
+    },
+    {
+      "name": "Birthday Photo Keepsake",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "A supplied celebration photo presented as a rotated print with a paper mat.",
+      "html": "<figure class=\"ds-photo-card\"><img src=\"/memories/raksa-cake.png\" alt=\"Teacher Raksa holding her birthday cake\"><figcaption>A wish, a cake, and the birthday girl</figcaption></figure>",
+      "css": ".ds-photo-card { width: 300px; padding: 9px 9px 23px; background: #fffdf8; box-shadow: 0 9px 18px rgba(75, 49, 63, .10); transform: rotate(-1.8deg); } .ds-photo-card img { display: block; width: 100%; height: 240px; object-fit: cover; } .ds-photo-card figcaption { padding: 13px 4px 0; color: #665968; font: italic 14px 'Cormorant Garamond', Georgia, serif; }"
+    },
+    {
+      "name": "Admin Data Panel",
+      "kind": "card",
+      "refersTo": "",
+      "description": "A quiet bordered surface for event editing or guest review.",
+      "html": "<section class=\"ds-admin-panel\"><h2>Event details</h2><p>Update the invitation details.</p></section>",
+      "css": ".ds-admin-panel { padding: 27px 30px 30px; border: 1px solid #e4d7cc; background: #fffdf9; } .ds-admin-panel h2 { margin: 0 0 12px; color: #5a3855; font: 600 27px 'Cormorant Garamond', Georgia, serif; } .ds-admin-panel p { margin: 0; color: #766977; font: 400 13px/1.7 'DM Sans', Arial, sans-serif; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Keepsake Invitation",
+    "overview": "This visual system treats the birthday invitation as a small piece of party stationery: warm paper, expressive serif lettering, and real snapshots from last year's gathering. Plum gives the event a clear anchor; rose, muted gold, and sage appear in small ornaments, labels, links, and accents. The result feels affectionate and celebratory while keeping the event information and RSVP readable.\n\nThe public invitation pairs decorative details with straightforward interaction patterns. The `/admin` surface shares the palette and type but uses more restrained panels, labels, and form spacing for event editing and guest review. The implementation uses the supplied photographs `raksa-cake.png`, `birthday-table.png`, and `friends-together.png`. The displayed event date is interpreted as 9 November 2026 and the time as 5:30 PM, following the product context.",
+    "keyCharacteristics": ["Warm cream paper surfaces with plum as the main anchor.", "Cormorant Garamond display lettering paired with DM Sans for reading and controls.", "Supplied celebration photographs presented as printed keepsakes.", "Cute stationery ornaments kept secondary to event details, RSVP, and admin tasks."],
+    "rules": [
+      { "name": "The Keepsake Accent Rule", "body": "Keep decorative hues in supporting roles; plum carries the principal action and information hierarchy.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Reserve the serif for expressive names, headings, and short handwritten-feeling notes. Use the sans serif for paragraphs, navigation, labels, and controls.", "section": "typography" }
+    ],
+    "dos": ["Do use the actual celebration photos in `public/memories/` for the hero and memories gallery.", "Do keep plum as the principal heading and filled-action color.", "Do use the established serif/sans pairing for display versus functional text.", "Do preserve the mobile RSVP flow and the gallery's responsive photo layout.", "Do keep admin data entry and guest review legible while sharing the invitation's palette and type."],
+    "donts": ["Don't replace the supplied celebration photos with generic stock imagery.", "Don't use decorative accents in a way that competes with event date, time, location, or RSVP actions.", "Don't turn the admin surface into a decorative invitation; its panels and labels support editing and guest review."]
+  }
+}
