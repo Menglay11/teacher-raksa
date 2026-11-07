@@ -40,10 +40,14 @@ function ConfettiBurst() {
 const initialEvent = {
   title: 'Teacher Raksa',
   date: '2026-11-09',
-  time: '17:30',
-  location: 'To be confirmed',
+  time: '18:30',
+  location: 'Autumn (Age: 18+)',
   message: 'A little evening of good food, lovely people, and a very special birthday. We would love to celebrate with you!',
 };
+
+function applyEventUpdates(event) {
+  return { ...event, time: event.time?.slice(0, 5) === '17:30' ? '18:30' : event.time, location: 'Autumn (Age: 18+)' };
+}
 
 const memories = [
   { src: '/memories/raksa-cake.png', alt: 'Teacher Raksa holding her birthday cake', caption: 'A wish, a cake, and the birthday girl' },
@@ -234,7 +238,7 @@ function Invitation() {
   useEffect(() => {
     if (!supabase) return;
     supabase.from('event_details').select('title, date, time, location, message').eq('id', 'main').maybeSingle()
-      .then(({ data }) => { if (data) setEvent(data); });
+      .then(({ data }) => { if (data) setEvent(applyEventUpdates(data)); });
   }, []);
 
   useEffect(() => {
@@ -334,7 +338,7 @@ function Invitation() {
         <div><span className="detail-label">The place</span><strong>{event.location || 'To be confirmed'}</strong></div>
       </div>
       <Countdown date={event.date} time={event.time} />
-      <a href="#rsvp" className="text-link">Leave a birthday wish <span aria-hidden="true">↗</span></a>
+      <a href="https://maps.app.goo.gl/sexuKyrArGh79fqN8" className="text-link" target="_blank" rel="noreferrer">View the location <span aria-hidden="true">↗</span></a>
     </section>
 
     <section className="rsvp-section" id="rsvp">
@@ -375,7 +379,7 @@ function Admin() {
       supabase.from('rsvps').select('id, full_name, contact, guest_count, note, created_at').order('created_at', { ascending: false }),
     ]);
     if (eventResult.error) setEventError('Could not load event details. Refresh the page before editing.');
-    else if (eventResult.data) { setEvent(eventResult.data); setEventError(''); }
+    else if (eventResult.data) { setEvent(applyEventUpdates(eventResult.data)); setEventError(''); }
     setLoadingEvent(false);
     if (guestResult.error) { setGuestError('Could not load registrations. Refresh the page to try again.'); setRsvps([]); }
     else { setGuestError(''); setRsvps(guestResult.data ?? []); }
