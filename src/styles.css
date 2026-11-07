@@ -283,6 +283,12 @@ td:first-child { color: var(--ink); font-weight: 600; }
   .wish-count { padding-top: 38px; white-space: nowrap; font-size: 21px; }
   .wish-count i { display: none; }
   .wish-book { padding: 0; }
+  .wish-dialog { width: calc(100% - 24px); max-height: calc(100dvh - 24px); }
+  .wish-card { max-height: calc(100dvh - 24px); padding: clamp(38px, 9vw, 48px) clamp(22px, 6vw, 30px) 28px; }
+  .wish-card::before { inset: 9px; }
+  .wish-card-label { margin-top: 15px; }
+  .wish-card blockquote { margin-top: 14px; padding-left: 14px; font-size: clamp(20px, 5.6vw, 24px); line-height: 1.45; background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.45em - 1px), rgba(142, 82, 107, .16) calc(1.45em - 1px), rgba(142, 82, 107, .16) 1.45em); background-position: 0 5px; }
+  .wish-card-from { margin-top: 18px; padding-left: 14px; }
   .wish-scroll { max-height: 806px; }
   .wish-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .wish-envelope { min-height: 122px; padding: 4px 6px; }
