@@ -141,10 +141,12 @@ function WishSticker({ kind }) {
 
 const wishDecorations = ['flower', 'cake', 'bow', 'star'];
 const wishColorPairs = [
-  ['#ffced8', '#ffe8c4'],
-  ['#ffdddd', '#fff4de'],
-  ['#ffced8', '#ffdddd'],
-  ['#ffdddd', '#ffe8c4'],
+  ['#e99ab1', '#fff4de'],
+  ['#b9a4d8', '#ffe8c4'],
+  ['#f2a47e', '#fff4de'],
+  ['#a9c9a5', '#ffdddd'],
+  ['#92bed8', '#ffe8c4'],
+  ['#e8c36e', '#fff4de'],
 ];
 
 function wishDecorationFor(id) {
@@ -195,7 +197,7 @@ function WishBoard({ wishes, loadingWishes, wishError, configured }) {
           const colors = wishColorsFor(entry.id, index);
       return <li className={`wish-entry wish-entry-${decoration}`} key={entry.id}>
         <button className="wish-envelope" type="button" style={{ '--envelope-color': colors.envelope, '--stamp-color': colors.stamp }} onClick={() => setOpenedWish(entry)} aria-label={`Open birthday wish from ${entry.display_name}`}>
-          <svg className="envelope-art" viewBox="0 0 160 112" fill="none" aria-hidden="true"><rect x="8" y="13" width="144" height="91" rx="5" fill="var(--envelope-color)" stroke="currentColor" strokeOpacity=".24" strokeWidth="1.5"/><path d="M12 30 80 77l68-47" fill="var(--envelope-color)" opacity=".72"/><path d="M12 31 76 76a7 7 0 0 0 8 0l64-45" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/><path d="M12 35v61a5 5 0 0 0 5 5h126a5 5 0 0 0 5-5V35L89 82a15 15 0 0 1-18 0L12 35Z" fill="var(--envelope-color)" opacity=".88"/><path d="m14 98 43-38m89 38-43-38" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg>
+          <svg className="envelope-art" viewBox="0 0 160 112" fill="none" aria-hidden="true"><rect x="8" y="13" width="144" height="91" rx="5" fill="var(--envelope-color)" stroke="currentColor" strokeOpacity=".24" strokeWidth="1.5"/><path d="M12 30 80 77l68-47" fill="var(--envelope-color)" opacity=".92"/><path d="M12 31 76 76a7 7 0 0 0 8 0l64-45" stroke="currentColor" strokeWidth="3" strokeLinejoin="round"/><path d="M12 35v61a5 5 0 0 0 5 5h126a5 5 0 0 0 5-5V35L89 82a15 15 0 0 1-18 0L12 35Z" fill="var(--envelope-color)" opacity=".96"/><path d="m14 98 43-38m89 38-43-38" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/></svg>
           <span className="envelope-seal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m12 2.5 2.55 6.1 6.6.5-5.05 4.25 1.6 6.45L12 16.25l-5.7 3.55 1.6-6.45L2.85 9.1l6.6-.5L12 2.5Z" fill="currentColor" stroke="#fff4de" strokeWidth="1.1" strokeLinejoin="round"/></svg></span>
         </button>
         <p className="envelope-sender"><span>From</span> <strong>{entry.display_name}</strong></p>
