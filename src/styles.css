@@ -140,8 +140,7 @@ h1, h2, p, figure { margin: 0; }
 .envelope-sender strong { color: var(--ink); font-size: 13px; }
 .wish-dialog { width: min(620px, calc(100% - 32px)); max-width: none; max-height: min(86vh, 760px); overflow: visible; padding: 0; border: 1px solid var(--line); background: transparent; color: var(--ink); }
 .wish-dialog::backdrop { background: rgba(42, 30, 41, .55); }
-.wish-card { position: relative; max-height: min(86vh, 760px); overflow-y: auto; padding: clamp(42px, 7vw, 68px) clamp(30px, 8vw, 76px); background-color: var(--paper); box-shadow: 0 22px 60px rgba(42, 30, 41, .25); }
-.wish-card::before { position: absolute; inset: 11px; border: 1px solid rgba(176, 108, 130, .34); content: ''; pointer-events: none; }
+.wish-card { position: relative; max-height: min(86vh, 760px); overflow-y: auto; padding: clamp(42px, 7vw, 68px) clamp(30px, 8vw, 76px); border: 1px solid rgba(176, 108, 130, .34); background-color: var(--paper); box-shadow: 0 22px 60px rgba(42, 30, 41, .25); }
 .wish-dialog[open] .wish-card { animation: wish-card-arrive .32s cubic-bezier(.16, .8, .28, 1) both; }
 .wish-dialog-close { position: absolute; z-index: 1; top: 20px; right: 22px; width: 38px; height: 38px; border: 1px solid var(--blush); border-radius: 50%; background: var(--blush); color: var(--ink); font-size: 25px; cursor: pointer; }
 .wish-dialog-close:focus-visible { outline: 3px solid var(--deep-accent); outline-offset: 3px; }
@@ -283,13 +282,12 @@ td:first-child { color: var(--ink); font-weight: 600; }
   .wish-count { padding-top: 38px; white-space: nowrap; font-size: 21px; }
   .wish-count i { display: none; }
   .wish-book { padding: 0; }
-  .wish-dialog { width: calc(100% - 24px); max-height: calc(100dvh - 24px); }
-  .wish-card { max-height: calc(100dvh - 24px); padding: clamp(38px, 9vw, 48px) clamp(22px, 6vw, 30px) 28px; }
-  .wish-card::before { inset: 9px; }
+  .wish-dialog { width: calc(100% - 24px); max-height: calc(100dvh - 24px); overflow: hidden; }
+  .wish-card { max-height: calc(100dvh - 26px); padding: clamp(38px, 9vw, 48px) clamp(22px, 6vw, 30px) 28px; }
   .wish-card-label { margin-top: 15px; }
   .wish-card blockquote { margin-top: 14px; padding-left: 14px; font-size: clamp(20px, 5.6vw, 24px); line-height: 1.45; background: repeating-linear-gradient(to bottom, transparent 0, transparent calc(1.45em - 1px), rgba(142, 82, 107, .16) calc(1.45em - 1px), rgba(142, 82, 107, .16) 1.45em); background-position: 0 5px; }
   .wish-card-from { margin-top: 18px; padding-left: 14px; }
-  .wish-scroll { max-height: 806px; }
+  .wish-scroll { max-height: 390px; }
   .wish-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .wish-envelope { min-height: 122px; padding: 4px 6px; }
   .envelope-seal { width: 25px; height: 25px; }
