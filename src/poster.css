@@ -1,0 +1,117 @@
+.poster-page {
+  min-height: 100vh;
+  padding: 24px clamp(18px, 5vw, 72px) 56px;
+  background: var(--peach);
+}
+
+.poster-tools {
+  width: min(100%, 1040px);
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.poster-back,
+.poster-print {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.poster-back { text-decoration-color: var(--deep-accent); }
+
+.poster-print {
+  min-height: 42px;
+  padding: 0 15px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper);
+  cursor: pointer;
+}
+
+.poster-print:hover { background: var(--blush); }
+
+.birthday-poster {
+  width: min(100%, 1040px);
+  margin: 0 auto;
+  padding: clamp(12px, 2.6vw, 26px);
+  background: var(--paper);
+  box-shadow: 0 18px 44px rgba(57, 45, 57, .16);
+}
+
+.poster-frame {
+  min-height: 680px;
+  padding: clamp(28px, 5vw, 58px) clamp(22px, 7vw, 82px) 35px;
+  border: 1px solid var(--line);
+  text-align: center;
+}
+
+.poster-header { color: var(--deep-accent); }
+.poster-mark { width: 40px; height: 40px; margin: 0 auto 10px; }
+.poster-header p { font: italic 17px var(--serif); }
+
+.poster-photo {
+  width: min(100%, 570px);
+  height: clamp(210px, 34vw, 330px);
+  margin: 27px auto 23px;
+  padding: 8px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(57, 45, 57, .14);
+  transform: rotate(-1deg);
+}
+
+.poster-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 38%; }
+.poster-copy { max-width: 700px; margin: 0 auto; }
+.poster-kicker { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.poster-copy h1 { margin-top: 3px; color: var(--ink); font: 600 clamp(42px, 8vw, 76px)/1 var(--serif); letter-spacing: -.035em; }
+.poster-message { max-width: 570px; margin: 13px auto 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.poster-invitation { margin-top: 12px; color: var(--ink); font: italic 20px var(--serif); }
+
+.poster-divider { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 23px auto 17px; }
+.poster-divider > span { width: min(28%, 170px); height: 1px; background: var(--line); }
+.poster-divider svg { width: 25px; height: 25px; }
+
+.poster-details { width: min(720px, 100%); margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.poster-details > div { padding: 3px 16px 5px; }
+.poster-details > div + div { border-left: 1px solid var(--line); }
+.poster-details dt { color: var(--deep-accent); font-size: 9px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+.poster-details dd { margin: 6px 0 0; color: var(--ink); font: 600 clamp(17px, 2.4vw, 23px)/1.15 var(--serif); }
+
+.poster-map { display: inline-flex; gap: 8px; margin-top: 18px; color: var(--ink); font-size: 11px; font-weight: 700; text-decoration-color: var(--deep-accent); text-underline-offset: 4px; }
+.poster-map span, .poster-footer span { color: var(--deep-accent); }
+.poster-footer { margin-top: 28px; color: var(--muted); font: italic 15px var(--serif); }
+
+@media (max-width: 560px) {
+  .poster-page { padding: 15px 12px 28px; }
+  .poster-tools { margin-bottom: 14px; }
+  .poster-back, .poster-print { font-size: 11px; }
+  .poster-print { min-height: 38px; padding: 0 10px; }
+  .birthday-poster { padding: 8px; }
+  .poster-frame { min-height: 0; padding: 26px 15px 25px; }
+  .poster-header p { font-size: 15px; }
+  .poster-photo { height: 220px; margin: 21px auto 19px; }
+  .poster-message { font-size: 12px; }
+  .poster-invitation { font-size: 18px; }
+  .poster-divider { margin: 20px auto 13px; }
+  .poster-details > div { padding: 3px 6px 5px; }
+  .poster-details dt { font-size: 8px; letter-spacing: .1em; }
+  .poster-details dd { font-size: clamp(15px, 4.2vw, 19px); }
+  .poster-footer { margin-top: 22px; }
+}
+
+@media print {
+  @page { size: A4 portrait; margin: 10mm; }
+  :root, body { background: #fff4de !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .poster-page { min-height: 0; padding: 0; background: #fff4de; }
+  .poster-tools { display: none; }
+  .birthday-poster { width: 100%; padding: 5mm; box-shadow: none; }
+  .poster-frame { min-height: 0; padding: 8mm 12mm; }
+  .poster-photo { height: 68mm; margin: 7mm auto 5mm; }
+  .poster-copy h1 { font-size: 42pt; }
+  .poster-message { font-size: 10pt; }
+  .poster-details dd { font-size: 15pt; }
+  .poster-map { margin-top: 5mm; }
+  .poster-footer { margin-top: 7mm; }
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { isSupabaseConfigured, supabase } from './lib/supabase.js';
+import './poster.css';
 
 const confettiColors = ['#392D39', '#FFCED8', '#FFDDDD', '#FFE8C4', '#FFF4DE'];
 
@@ -311,7 +312,7 @@ function Invitation() {
   <main className="invitation-page">
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Teacher Raksa's birthday home"><PartyMark /> <span>Raksa's day</span></a>
-      <nav aria-label="Main navigation"><a href="#details">The details</a><a href="#memories">Last year's moments</a><a className="nav-cta" href="#rsvp">Leave a wish <span aria-hidden="true">↗</span></a></nav>
+      <nav aria-label="Main navigation"><a href="#details">The details</a><a href="/poster">Invitation poster</a><a href="#memories">Last year's moments</a><a className="nav-cta" href="#rsvp">Leave a wish <span aria-hidden="true">↗</span></a></nav>
     </header>
 
     <section className="hero" id="top">
@@ -338,6 +339,13 @@ function Invitation() {
         <div><span className="detail-label">The day</span><strong>{formatDate(event.date)}</strong></div>
         <div><span className="detail-label">The time</span><strong>{formatTime(event.time)}</strong></div>
         <div><span className="detail-label">The place</span><strong>{event.location || 'To be confirmed'}</strong></div>
+      </div>
+      <div className="booking-details" aria-label="Booking details">
+        <h3>Booking details</h3>
+        <dl>
+          <div><dt>Booked name</dt><dd>Horng</dd></div>
+          <div><dt>Phone number</dt><dd><a href="tel:011397567">011 397 567</a></dd></div>
+        </dl>
       </div>
       <Countdown date={event.date} time={event.time} />
       <a href="https://maps.app.goo.gl/sexuKyrArGh79fqN8" className="text-link" target="_blank" rel="noreferrer">View the location <span aria-hidden="true">↗</span></a>
@@ -450,6 +458,47 @@ function Admin() {
   </main>;
 }
 
+function Poster() {
+  const [event, setEvent] = useState(initialEvent);
+
+  useEffect(() => {
+    document.title = `Invitation poster · ${event.title}`;
+  }, [event.title]);
+
+  useEffect(() => {
+    if (!supabase) return;
+    supabase.from('event_details').select('title, date, time, location, message').eq('id', 'main').maybeSingle()
+      .then(({ data }) => { if (data) setEvent(applyEventUpdates(data)); });
+  }, []);
+
+  return <main className="poster-page">
+    <div className="poster-tools"><a href="/" className="poster-back">← Back to the invitation</a><button className="poster-print" type="button" onClick={() => window.print()}>Print or save as PDF</button></div>
+    <article className="birthday-poster" aria-labelledby="poster-title">
+      <div className="poster-frame">
+        <header className="poster-header"><PartyMark className="poster-mark" /><p>With love, you’re invited</p></header>
+        <figure className="poster-photo"><img src="/memories/raksa-cake.png" alt="Teacher Raksa celebrating with her birthday cake" /></figure>
+        <div className="poster-copy">
+          <p className="poster-kicker">A birthday gathering for</p>
+          <h1 id="poster-title">{event.title}</h1>
+          <p className="poster-message">{event.message}</p>
+          <p className="poster-invitation">Join us for an evening of celebration</p>
+        </div>
+        <div className="poster-divider" aria-hidden="true"><span></span><PartyMark /><span></span></div>
+        <dl className="poster-details">
+          <div><dt>Date</dt><dd>{formatDate(event.date)}</dd></div>
+          <div><dt>Time</dt><dd>{formatTime(event.time)}</dd></div>
+          <div><dt>Venue</dt><dd>{event.location || 'To be confirmed'}</dd></div>
+        </dl>
+        <a className="poster-map" href="https://maps.app.goo.gl/sexuKyrArGh79fqN8" target="_blank" rel="noreferrer">Open venue directions <span aria-hidden="true">↗</span></a>
+        <footer className="poster-footer">We’d love to celebrate with you <span aria-hidden="true">✦</span></footer>
+      </div>
+    </article>
+  </main>;
+}
+
 export default function App() {
-  return window.location.pathname.replace(/\/$/, '') === '/admin' ? <Admin /> : <Invitation />;
+  const path = window.location.pathname.replace(/\/$/, '');
+  if (path === '/admin') return <Admin />;
+  if (path === '/poster') return <Poster />;
+  return <Invitation />;
 }
