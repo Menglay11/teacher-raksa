@@ -71,34 +71,6 @@ function formatTime(value) {
   return new Intl.DateTimeFormat('en', { hour: 'numeric', minute: '2-digit' }).format(new Date(`2026-01-01T${normalized}`));
 }
 
-function Countdown({ date, time }) {
-  const [remaining, setRemaining] = useState(null);
-
-  useEffect(() => {
-    if (!date || !time) return;
-    const target = new Date(`${date}T${time.length === 5 ? `${time}:00` : time}`);
-    const update = () => setRemaining(Math.max(0, target.getTime() - Date.now()));
-    update();
-    const interval = setInterval(update, 1000);
-    return () => clearInterval(interval);
-  }, [date, time]);
-
-  if (remaining === null) return null;
-  if (remaining === 0) return <p className="countdown-ended">The celebration is underway!</p>;
-
-  const seconds = Math.floor(remaining / 1000);
-  const units = [
-    ['days', Math.floor(seconds / 86400)],
-    ['hours', Math.floor((seconds % 86400) / 3600)],
-    ['minutes', Math.floor((seconds % 3600) / 60)],
-    ['seconds', seconds % 60],
-  ];
-
-  return <div className="countdown" role="timer" aria-label="Time remaining until the celebration">
-    {units.map(([label, value]) => <div className="countdown-unit" key={label}><strong>{String(value).padStart(2, '0')}</strong><span>{label}</span></div>)}
-  </div>;
-}
-
 function PartyMark({ className = '' }) {
   return <svg className={className} viewBox="0 0 68 68" fill="none" aria-hidden="true">
     <path d="M34 4c-3 8-3 14 0 19 3-5 3-11 0-19Z" fill="#FFCED8" />
@@ -312,7 +284,7 @@ function Invitation() {
   <main className="invitation-page">
     <header className="site-header">
       <a className="brand" href="#top" aria-label="Teacher Raksa's birthday home"><PartyMark /> <span>Raksa's day</span></a>
-      <nav aria-label="Main navigation"><a href="#details">The details</a><a href="/poster">Invitation poster</a><a href="#memories">Last year's moments</a><a className="nav-cta" href="#rsvp">Leave a wish <span aria-hidden="true">↗</span></a></nav>
+      <nav aria-label="Main navigation"><a href="/poster">Invitation poster</a><a href="#memories">Last year's moments</a><a className="nav-cta" href="#rsvp">Leave a wish <span aria-hidden="true">↗</span></a></nav>
     </header>
 
     <section className="hero" id="top">
@@ -330,25 +302,6 @@ function Invitation() {
         <svg className="orbit orbit-one" viewBox="0 0 420 370" fill="none" aria-hidden="true"><path d="M2 196C2 91 88 6 196 6c100 0 188 77 211 177" stroke="#FFCED8" strokeWidth="1.3" strokeDasharray="3 6"/><circle cx="409" cy="183" r="5" fill="#FFDDDD"/><path d="M14 206c8 85 58 126 120 149" stroke="#FFE8C4" strokeWidth="1.3" strokeDasharray="3 6" /></svg>
       </div>
       <div className="hero-stamp" aria-hidden="true"><span>made with</span><strong>love</strong><i>✳</i></div>
-    </section>
-
-    <section className="event-details" id="details" aria-labelledby="details-title">
-      <div className="details-heading"><PartyMark className="small-mark" /><h2 id="details-title">Put it in your diary</h2><p>The important bits, tied up with a bow.</p></div>
-      <div className="detail-rule"></div>
-      <div className="detail-items">
-        <div><span className="detail-label">The day</span><strong>{formatDate(event.date)}</strong></div>
-        <div><span className="detail-label">The time</span><strong>{formatTime(event.time)}</strong></div>
-        <div><span className="detail-label">The place</span><strong>{event.location || 'To be confirmed'}</strong></div>
-      </div>
-      <div className="booking-details" aria-label="Booking details">
-        <h3>Booking details</h3>
-        <dl>
-          <div><dt>Booked name</dt><dd>Horng</dd></div>
-          <div><dt>Phone number</dt><dd><a href="tel:011397567">011 397 567</a></dd></div>
-        </dl>
-      </div>
-      <Countdown date={event.date} time={event.time} />
-      <a href="https://maps.app.goo.gl/sexuKyrArGh79fqN8" className="text-link" target="_blank" rel="noreferrer">View the location <span aria-hidden="true">↗</span></a>
     </section>
 
     <section className="rsvp-section" id="rsvp">
